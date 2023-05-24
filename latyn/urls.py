@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
@@ -15,3 +16,13 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+=======
+from django.contrib import admin
+from django.urls import path
+from django.views.generic import TemplateView
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('latyn/', TemplateView.as_view(template_name='latyn.html'), name='latyn'),
+]
+>>>>>>> origin/main
