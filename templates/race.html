@@ -1,0 +1,170 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Жылдам жазу</title>
+  
+<style>
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+#challenge-text {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#challenge-text.python-code {
+  font-family: monospace;
+}
+
+#challenge-text.terminal-window {
+  font-family: monospace;
+  background-color: black;
+  color: white;
+}
+
+#user-input {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  width: 97%;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#user-input.incorrect {
+  border-color: red;
+}
+
+#start-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #28a745;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#start-button:disabled {
+  background-color: #121212;
+  cursor: not-allowed;
+}
+
+.highlight {
+  background-color: #00ff4e;
+}
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Main Styles */
+        main {
+            padding: 10px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+</style>
+</head>
+
+<body>
+<header>
+        <nav>
+            <ul>
+                <li><a href="/">Басты бет</a></li>
+                <li><a href="/latyn/">Латынша</a></li>
+		<li><a href="/race/">Жарыс</a></li>
+                <li><a href="/courses/">Курстар</a></li>
+            </ul>
+        </nav>
+    </header><main>
+  <div class="container">
+    <h1>Мәтін</h1>
+    <div id="challenge">
+      <div id="challenge-text" style="min-height: 5em;"></div>
+      <textarea id="user-input" rows="10" cols="100" disabled></textarea>
+    </div>
+    <div id="controls">
+      <button id="start-button">Start</button>
+      <button id="python-button">Python</button>
+      <button id="terminal-button">Terminal</button>
+    </div>
+    <div id="statistics"></div>
+  </div>
+</main>
+<script> {% include 'src/main.js' %}</script>
+<footer>&copy; 2023 Үздіктер жобасы. Бүкіл құқығы қорғалған.</footer>
+</body>
+</html>
